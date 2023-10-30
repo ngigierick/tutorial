@@ -13,5 +13,6 @@ echo 'your password is gained..hahahaha';
     password:<br>
     <input type = "password" name = "password" ><br><br>
     <input type = "submit" value ="submit" >
+    
 
 </form>C:\xampp2\htdocs\openpathtuet1
