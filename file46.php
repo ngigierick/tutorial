@@ -1,26 +1,15 @@
-<b>uploading files</b>
-<br>
-<hr>
-
-
-<br>
-
+file handling lisiting files<br><br><br>
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check if a file was uploaded
-    if (isset($_FILES['file'])) {
-        $name = $_FILES['file']['name'];
-       $size = $_FILES['file']['size'];
-       $type = $_FILES['file']['type'];
-    $tmp_name = $_FILES['file']['tmp_name'];
-       $error = $_FILES['file']['error'];
-       echo "name : $name,<br> size: $size , <br> type: $type, <br>temprary name: $tmp_name ,<br>error: $error  <br><br><br>";
-    } else {  
-        echo "<br>No file uploaded.";
+$directory = 'uploads';
+if ($handle = opendir($directory.'/')){
+    echo '<br>looking inside  \''.$directory.'\'<br>';
+
+    while($file = readdir($handle)){
+        if($file != '.'&&$file !='..'){
+            echo '<a href = "'.$directory.'/'.$file.'">'.$file.'</a><br>';
+
+        }
+        
     }
 }
 ?>
-<form action="file46.php " method="POST" enctype="multipart/form-data">
-    <input type="file" name="file"><br><br>
-    <input type="submit" value="Submit">
-</form>

@@ -1,17 +1,17 @@
-uplaoding file 
-
+checking if a file exists<br><br><br>
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check if a file was uploaded
-    if (isset($_FILES['file'])) {
-        $name = $_FILES['file']['name'];
-       $size = $_FILES['file']['size'];
-       $type = $_FILES['file']['type'];
-    $tmp_name = $_FILES['file']['tmp_name'];
-       $error = $_FILES['file']['error'];
-       echo "name : $name,<br> size: $size , <br> type: $type, <br>temprary name: $tmp_name ,<br>error: $error  <br><br><br>";
-    } else {  
-        echo "<br>No file uploaded.";
-    }
+
+$filename = 'Anaimes.txt';
+if (file_exists($filename)){
+    echo 'file already exixsts';
+
+}else{
+    echo 'file does not exixsts<br>';
+    $handle = fopen ($filename, 'w');
+    fwrite($handle,'nothing');
+    fclose($handle);
+    echo '<br>i have created a new file';
+
 }
-?>
+
+?> 

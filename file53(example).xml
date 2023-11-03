@@ -1,0 +1,28 @@
+<producers>
+
+<producer>
+<name>Alex</name>
+<age> 21</age>
+    <show>
+    <showname>the vitzona</showname>
+    <showdate>12 dec 2010</showdate>
+    </show>
+
+        <show>
+    <showname>the vitzona2</showname>
+    <showdate>4 july 2010</showdate>
+    </show>
+</producer>
+
+<producer>
+<name>susan</name>
+<age> 22</age>
+
+       <show>
+    <showname>the ppl</showname>
+    <showdate>14 sep 2010</showdate>
+    </show>
+</producer>
+
+
+</producers>
