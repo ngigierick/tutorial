@@ -10,9 +10,13 @@ if(isset($_POST['search_name'])){
         if(strlen($search_name) >= 3){
             $query = "SELECT `name` FROM `names` WHERE `name` LIKE '%".mysqli_real_escape_string($conn,$search_name)."%'";
             $query_run = mysqli_query($conn,$query);
-            if(mysqli_num_rows($query_run)>= 1){
-                echo '<br><i>results found</i>';
+            $query_num_rows = mysqli_num_rows($query_run);
+
+            if($query_num_rows>= 1){
+
+                echo '<br> '.$query_num_rows .' <i>results found</i>';
                 echo "<br><u><font size = '5'>names:</font></u>";
+                // a while looping through the rows to fetch data
                 while($query_row = mysqli_fetch_assoc($query_run)){
                     echo '<br>: ' . $query_row['name'].'';
                 }
